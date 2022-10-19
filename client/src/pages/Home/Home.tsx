@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 
+import MovieCard from "../../components/MovieCard";
+
 const SelectedMovies = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
   ...theme.typography.body2,
@@ -21,7 +23,21 @@ function Home() {
           <Paper elevation={1}>Filters</Paper>
         </Grid>
         <Grid item xs={12} md={8}>
-          <Paper elevation={1}>List of Movies</Paper>
+          <Paper elevation={1}>
+          <Box sx={{ flexGrow: 1, padding: 1 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6} md={4} lg={2}>
+                <MovieCard />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={2}>
+                <MovieCard />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={2}>
+                <MovieCard />
+              </Grid>
+            </Grid>
+            </Box>
+          </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
           <SelectedMovies elevation={1}>Selected Movies</SelectedMovies>
